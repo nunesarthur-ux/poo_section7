@@ -1,5 +1,6 @@
 package java7q01;
 public class Shape {
+    int test = 0;
     private int numSides;
     private boolean regular;
     
