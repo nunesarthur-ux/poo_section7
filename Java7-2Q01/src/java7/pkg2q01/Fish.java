@@ -56,6 +56,12 @@ public class Fish {
         }
         return temp;
     }
+
+    @Override
+    public String toString() {
+        return "Fish{" + "fishName=" + fishName + ", typeOfFish=" + typeOfFish + ", friendliness=" + friendliness + '}';
+    }
+    
     
     
     
