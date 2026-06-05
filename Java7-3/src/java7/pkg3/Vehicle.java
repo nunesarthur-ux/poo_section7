@@ -28,6 +28,17 @@ public class Vehicle {
     public void setModel(String model) {
         this.model = model;
     }
+
+    public static void setMake(String make) {
+        Vehicle.make = make;
+    }
+    
+    @Override
+    public String toString() {
+        return "The vehicle is manufactured by: " + make +
+               "\nThe model type is " + model +
+               "\nThe chassis number is " + ChassisNo;
+}
     
     
     
