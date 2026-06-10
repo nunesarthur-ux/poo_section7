@@ -19,6 +19,19 @@ public class Produto {
         this.ativo = ativo;
     }
     
+    public void addToInventory(int qtd){
+        this.qtdEstoque += qtd;
+    }
+    
+    public void deductFromInventory(int qtd){
+        if(qtd <= qtdEstoque){
+        qtdEstoque -= qtd;
+        }
+        else{
+        System.out.println("Quantidade insuficiente em estoque.");
+        }
+    }
+    
     //métodos acessores e modificadores
     public int getNumeroItem() {
         return numeroItem;
