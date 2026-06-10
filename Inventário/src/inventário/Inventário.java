@@ -11,6 +11,7 @@ public class Inventário {
         String tempAtivo;
         int tempQtd = -1;
         int MaxSize = -1;
+        int tempMenu;
         while(tempQtd < 0){
             try {
                 System.out.println("Insira o numero de produtos que deseja adicionar "
@@ -29,15 +30,40 @@ public class Inventário {
         if (tempQtd == 0){
             System.out.println("Nao ha produtos");
         }
+        
+        
         else{
             addToInventory(produtos,in);
-                
+        }
+        
+        do{
+            tempMenu = getMenuOption(in);
+            switch(tempMenu){
+                case 1:
+                    displayInventory(produtos);
+                    break;
+                case 2:
+                    produtos[1].addToInventory(3);
+                    break;
+                case 3:
+                    produtos[1].deductFromInventory(3);
+                    break;
+                case 4:
+                    produtos[1].setAtivo("desativado");
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
             }
+        }while(tempMenu != 0);
+        
          System.out.println("\n======= PRODUTOS CADASTRADOS =======");
          displayInventory(produtos);
-
         in.close();    
     }
+    
+    
+    
     public static void displayInventory(Produto[]p){
        for (Produto produt : p) {
                 System.out.println(produt);
@@ -68,6 +94,28 @@ public class Inventário {
     }
     public int getNumProducts(Produto[]p){
         return p.length;
+    }
+    public static int getMenuOption(Scanner in){
+        int tempMenu = -1;
+        while(tempMenu < 0 || tempMenu > 4){
+            try{
+                System.out.println("1.Exibir Inventário");
+                System.out.println("2.Adicionar Estoque");
+                System.out.println("3.Deduzir Estoque");
+                System.out.println("4.Descontinuar Produto");
+                System.out.println("0.Sair");
+                if (tempMenu < 0 || tempMenu > 4){
+                    System.out.println("INVALIDO!");
+                }
+            }
+            catch(InputMismatchException e){
+                System.out.println("Digite so numeros.");
+                in.nextLine();
+                tempMenu = -1;
+                
+            }
+        }
+        return tempMenu;
     }
 }
     
