@@ -34,6 +34,12 @@ public class CD extends Produto {
     public void setSelo(int selo) {
         this.selo = selo;
     }
-    
+    @Override
+    public String toString() {
+        return "Numero: " + getNumeroItem() + "Quantidade em estoque: " + getQtdEstoque() + "Nome do produto: " +
+                "CD" + "Preco do item: " + getPrecoItem() + "Ativo? " + getAtivo() + "Artista = " 
+                + artista + ", Numero de Musicas = " + numDeMusicas
+                + ", selo = " + selo;
+    }
     
 }
