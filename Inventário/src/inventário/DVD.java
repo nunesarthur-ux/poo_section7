@@ -44,7 +44,9 @@ public class DVD extends Produto {
 
     @Override
     public String toString() {
-        return "DVD" + "duracaoFilme = " + duracaoFilme + ", classificacaoEtaria = " + classificacaoEtaria
+        return "Numero: " + getNumeroItem() + "Quantidade em estoque: " + getQtdEstoque() + "Nome do produto: " +
+                "DVD" + "Preco do item: " + getPrecoItem() + "Ativo? " + getAtivo() + "duracaoFilme = " 
+                + duracaoFilme + ", classificacaoEtaria = " + classificacaoEtaria
                 + ", estudioCinematografico = " + estudioCinematografico;
     }
     
