@@ -14,7 +14,7 @@ public class DVD extends Produto {
     
     @Override
     public double getValorEstoque(){
-        return (double) super.getQtdEstoque() * super.getPrecoItem();
+        return (double) super.getQtdEstoque() * super.getPrecoItem() * 1.05;
     
     }
 
@@ -44,10 +44,10 @@ public class DVD extends Produto {
 
     @Override
     public String toString() {
-        return "Numero: " + getNumeroItem() + "Quantidade em estoque: " + getQtdEstoque() + "Nome do produto: " +
-                "DVD" + "Preco do item: " + getPrecoItem() + "Ativo? " + getAtivo() + "duracaoFilme = " 
-                + duracaoFilme + ", classificacaoEtaria = " + classificacaoEtaria
-                + ", estudioCinematografico = " + estudioCinematografico;
+        return "\nNumero do item: " + getNumeroItem() + "\nQuantidade em estoque: " + getQtdEstoque() + "\nNome do produto: " +
+                "DVD" + "\nPreco do item: " + getPrecoItem() + "\nAtivo? " + getAtivo() + "\nDuracaoFilme = " 
+                + duracaoFilme + "\nClassificacaoEtaria = " + classificacaoEtaria
+                + "\nEstudioCinematografico = " + estudioCinematografico;
     }
     
     
